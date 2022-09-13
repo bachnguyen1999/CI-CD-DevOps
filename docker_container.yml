@@ -3,11 +3,11 @@
   become: yes
   tasks:
       - name: stop current running container
-      command: docker stop docker_container
+      command: docker stop container
       ignore_errors: yes
 
     - name: remove stopped docker container
-      command: docker rm docker_container
+      command: docker rm container
       ignore_errors: yes
 
     - name: remove current docker image
