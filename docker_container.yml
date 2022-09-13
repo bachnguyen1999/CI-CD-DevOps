@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-      - name: stop current running container
+    - name: stop current running container
       command: docker stop container
       ignore_errors: yes
 
