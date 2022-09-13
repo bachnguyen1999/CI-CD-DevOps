@@ -6,8 +6,8 @@
 
     - name: create docker image using war file
       command: docker build -t image:latest .
-      args:
-        chdir: /opt/docker
+  #    args:
+  #      chdir: /opt/docker
 
     - name: create tag to image
       command: docker tag image bachnguyen18/image
