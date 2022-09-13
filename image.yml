@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+
+    - name: create docker image using war file
+      command: docker build -t image:latest .
+      args:
+        chdir: /opt/docker
+
+    - name: create tag to image
+      command: docker tag image bachnguyen18/image
+
+    - name: push image on to dockerhub
+      command: docker push bachnguyen18/image
+
+    - name: remove docker images from ansible server
+      command: docker rmi tomcat image:latest bachnguyen18/image
+      ignore_errors: yes
