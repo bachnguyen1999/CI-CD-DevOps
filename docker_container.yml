@@ -2,17 +2,6 @@
 - hosts: all
   become: yes
   tasks:
-    - name: stop current running container
-      command: docker stop container
-      ignore_errors: yes
-
-    - name: remove stopped docker container
-      command: docker rm container
-      ignore_errors: yes
-
-    - name: remove current docker image
-      command: docker rmi bachnguyen18/image:latest
-      ignore_errors: yes
 
     - name: pull docker image from dockerhub
       command: docker pull bachnguyen18/image:latest
